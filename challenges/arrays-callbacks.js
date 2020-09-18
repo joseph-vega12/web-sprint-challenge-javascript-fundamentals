@@ -21,7 +21,7 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 function animals() {
   const displayNames = [];
-  zooAnimals.forEach(function (item) {
+  zooAnimals.forEach((item) => {
     return displayNames.push(`${item.animal_name} ${item.scientific_name}`)
   });
   return displayNames;
@@ -35,7 +35,7 @@ console.log(animals());
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 */
 function getAnimalNames(data) {
-  const lowCaseAnimalNames = data.map(function (item) {
+  const lowCaseAnimalNames = data.map((item) => {
     return item.animal_name.toLowerCase();
   });
   return lowCaseAnimalNames;
@@ -48,7 +48,7 @@ console.log(getAnimalNames(zooAnimals))
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = zooAnimals.filter(function (item) {
+const lowPopulationAnimals = zooAnimals.filter( (item) =>  {
   return item.population < 5;
 })
 console.log(lowPopulationAnimals);
@@ -60,7 +60,7 @@ The zoos need to know their total animal population across the United States. Fi
 */
 function getAverageGoals(data) {
   let totalPopulation = 0;
-  const totalPop = data.reduce(function (accumulator, curVal) {
+  const totalPop = data.reduce((accumulator, curVal) =>{
     return accumulator + curVal["population"];
   }, 0);
   // return `${totalPop + data.length}`;
