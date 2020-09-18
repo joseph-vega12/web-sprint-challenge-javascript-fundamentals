@@ -18,26 +18,39 @@ const zooAnimals = [
 /* Request 1: .forEach()
 
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
-
 */
-const displayNames = [];
-console.log(displayNames);
+function animals(){
+  const displayNames = [];
+  zooAnimals.forEach(function(item){
+      return displayNames.push(`${item.animal_name} ${item.scientific_name}`)
+  });
+  return displayNames;
+}
+
+console.log(animals());
+
 
 /* Request 2: .map()
 
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
-
 */
-
-const lowCaseAnimalNames
-console.log(lowCaseAnimalNames);
+function getAnimalNames(data){
+  const lowCaseAnimalNames = data.map(function(item){
+     return item.animal_name.toLowerCase();
+  });
+return lowCaseAnimalNames;
+}
+console.log(getAnimalNames(zooAnimals))
+// console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals
+const lowPopulationAnimals = zooAnimals.filter(function(item){
+  return item.population < 5;
+})
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -45,9 +58,16 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = 0;
-console.log(populationTotal);
 
+// let populationTotal = 0;
+// function getTotalPopulation(data){
+//   const total = data.reduce(function(accumulator, curVal){
+//     return accumulator + curVal.population = populationTotal;
+//   }, 0)
+//   return populationTotal;
+// }
+// // console.log(populationTotal);
+// console.log(getTotalPopulation(zooAnimals));
 
 // ==== Callbacks ====  
 
@@ -58,6 +78,10 @@ console.log(populationTotal);
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
+function consume(a, b, cb){
+
+}
+console.log(1, 2, callback)
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
